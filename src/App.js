@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from './css/main.module.css'
+import MainMenu from './components/MainMenu'
+import LoginForm from './components/LoginForm'
+import { useSelector } from 'react-redux'
 
 function App() {
+  const authUser = useSelector(store => store.auth)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={ styles.background }>
+      <MainMenu />
+      {authUser.isLogin ? null : <LoginForm />}
     </div>
   );
 }

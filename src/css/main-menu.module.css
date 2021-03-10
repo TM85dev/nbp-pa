@@ -1,0 +1,33 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    background: var(--persian-green);
+}
+.nav>div {
+    margin: 0 16px;
+}
+.nav h1 {
+    font-size: 2em;
+}
+.nav p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.logoutForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logoutForm button {
+    border: 0;
+    outline: none;
+    background: #264653;
+    color: white;
+    font-size: 0.7em;
+    padding: 2px 12px;
+}
+
