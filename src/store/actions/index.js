@@ -12,3 +12,18 @@ export const auth = (user) => ({
 export const unauth = () => ({
     type: 'UNAUTH'
 })
+export const getCurrency = (data) => ({
+    type: 'GET_CURRENCY',
+    payload: data
+})
+export const addCurrency = (currency) => ({
+    type: 'ADD_CURRENCY',
+    payload: currency
+})
+export const removeCurrency = (currency) => ({
+    type: 'REMOVE_CURRENCY',
+    payload: currency
+})
+export const flushCurrency = () => ({
+    type: 'FLUSH_CURRENCY'
+})

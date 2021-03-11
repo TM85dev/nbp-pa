@@ -1,0 +1,29 @@
+.notLoginModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #26465396;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.notLoginModal > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #264653;
+    border-radius: 4px;
+    padding: 16px;
+}
+.notLoginModal p {
+    color: lightgray;
+}
+.notLoginModal button {
+    border: 0;
+    background: #f4a261;
+    border-radius: 2px;
+    padding: 4px 26px;
+    outline: none;
+}
