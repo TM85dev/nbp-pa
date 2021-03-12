@@ -1,3 +1,20 @@
 .topHeader h1 {
     text-align: center;
 }
+.tableWrapper {
+    min-height: 200px;
+    position: relative;
+}
+.removeAllBtn {
+    position: absolute;
+    bottom: 0;
+    right: 16px;
+    padding: 4px 8px;
+    background: var(--burnt-sienna);
+    border: 0;
+    border-radius: 4px;
+    font-size: 0.7em;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 0 4px;
+}

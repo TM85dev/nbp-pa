@@ -24,6 +24,7 @@ export const removeCurrency = (currency) => ({
     type: 'REMOVE_CURRENCY',
     payload: currency
 })
-export const flushCurrency = () => ({
-    type: 'FLUSH_CURRENCY'
+export const flushCurrency = (user) => ({
+    type: 'FLUSH_CURRENCY',
+    payload: user
 })

@@ -74,9 +74,11 @@
 } 
 
 .table {
+    width: 100%;
     border-collapse: collapse;
     font-size: 0.78em;
     color: #264653;
+    border-color: #00000036;
 }
 .table thead {
     background: #2a9d90;
@@ -95,7 +97,8 @@
     box-shadow: 0 0 4px 1px var(--sandy-brown);
     border: 0;
     font-size: 0.9em;
-    padding: 2px 8px;
+    padding: 2px 4px;
+    width: 100%;
     cursor: pointer;
 }
 .table .added {
@@ -103,6 +106,10 @@
     background: lightgray;
     color: gray;
     box-shadow: 0 0 4px 1px gray;
+}
+.table .burntBtn {
+    background: var(--burnt-sienna);
+    box-shadow: 0 0 4px 1px var(--burnt-sienna);
 }
 
 .loading {

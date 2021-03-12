@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux' 
-import { getCurrency, addCurrency, removeCurrency, flushCurrency } from '../store/actions'
+import { getCurrency, addCurrency } from '../store/actions'
 import axios from 'axios'
-import styles from '../css/main.module.css'
 import NotLoginModal from './NotLoginModal'
+import Table from './Table'
+import { loading as styles } from '../css/main.module.css'
 
 function CurrencyList({ authUser, currentList }) {
     const dispatch = useDispatch()
@@ -17,23 +18,18 @@ function CurrencyList({ authUser, currentList }) {
             .then(res => dispatch(getCurrency(res.data[0].rates)))
             .finally(() => setIsLoading(false))
     }
-    const addCurrencyHandler = (e, currency, id) => {
+    const addCurrencyHandler = (currency) => {
         if(authUser.isLogin) {
-            setIsModalActive(true)
+            dispatch(addCurrency({user: authUser.name, ...currency}))
         } else {
-            e.target.textContent = 'Added'
-            e.target.classList.add(styles.added)
-            dispatch(addCurrency({id, ...currency}))
-
+            setIsModalActive(true)
         }
-    }
-    const removeCurrencyHandler = (currency, id) => {
-        dispatch(removeCurrency({id, ...currency}))
     }
     const isCurrencyActive = (currency) => {
         let isActive = false
+        // eslint-disable-next-line
         userCurrency.map(item => {
-            if(item.code === currency.code) {
+            if(item.code === currency.code && item.user === authUser.name) {
                 isActive = true
             }
         })
@@ -45,37 +41,8 @@ function CurrencyList({ authUser, currentList }) {
     }, [currentList])
     return(
         <div>
-            {isLoading ? <p className={styles.loading}>loading...</p> : 
-                <table border={1} className={styles.table}>
-                    <thead>
-                        <tr>
-                            <th>l.p.</th>
-                            <th>currency</th>
-                            <th>code</th>
-                            <th>mid</th>
-                            <th>action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {currency.map((item, index) => (
-                            <tr key={index}>
-                                <td>{index + 1}</td>
-                                <td>{item.currency}</td>
-                                <td>{item.code}</td>
-                                <td>{item.mid}</td>
-                                <td>
-                                    <button 
-                                        className={isCurrencyActive(item) ? styles.added : ''} 
-                                        onClick={(e) => addCurrencyHandler(e, item ,index)}
-                                    >{isCurrencyActive(item) ? 'added' : 'add'}
-                                    </button>
-                                
-                                <button onClick={() => removeCurrencyHandler(item, index)}>remove</button>
-                                </td>
-                            </tr> 
-                        ))}
-                    </tbody>
-                </table>
+            {isLoading ? <p className={styles}>loading...</p> : 
+            <Table currency={currency} addCurrencyHandler={addCurrencyHandler} isCurrencyActive={isCurrencyActive} />
             }
             {isModalActive ? <NotLoginModal setIsModalActive={setIsModalActive} /> : null}
         </div>

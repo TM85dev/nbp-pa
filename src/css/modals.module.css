@@ -27,3 +27,37 @@
     padding: 4px 26px;
     outline: none;
 }
+.removeModal {
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #26465396;
+    z-index: 9;
+}
+.removeModal > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #264653;
+    border-radius: 4px;
+    padding: 16px;
+    min-width: 200px;
+    min-height: 70px;
+}
+.removeModal p {
+    color: lightgray;
+}
+.removeModal .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.removeModal button {
+    margin: 0 16px;
+}
