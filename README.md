@@ -1,16 +1,16 @@
 # NBP Practical Assignment
-Ten projekt skupia się na połączeniu z api, pobraniu danych i wyświetleniu ich na stronie.
-Pobrane dane wyświetlane są w dwóch listach.
-Po zalogowaniu się do panelu użytkownika można dodać dane z tabeli i je usunąć.
-Każdy z użytkowników posiada własną listę danych, którą może edytować.
+
+This project focuses on connecting to the api, getting the data and displaying it on the page. The downloaded data is displayed in two lists. After logging in to the user panel, you can add and delete data from the table. Each user has their own list of data that can be edited.
+
 
 ## Login settings
-Symulacja logowania do panelu użytkownika.
-Do wyboru mamy dwóch użytkowników, aby zasymulować logowanie i przepływ danych.
-Każdy z użytkowników posiada własną odrębną listę danych. Może je edytować nie wpływając na zmianę danych innych użytkowników.
-Każdy z użytkowników może zostać wylogowany, po czym przechodzi do panelu logowania.
 
-**Użytkownicy:**
+Simulation of logging in to the user's panel.
+We have two users to choose from to simulate logging and data flow.
+Each user has his own separate data list. It can be edited without affecting other users' data.
+Each user can be logged out and then redirected to the login panel.
+
+**Users:**
 ```
 1. login: demo1@demo.pl
    password: demodemo1
@@ -18,14 +18,15 @@ Każdy z użytkowników może zostać wylogowany, po czym przechodzi do panelu l
    password: demodemo2
 ```
 
-## Additional info
-Projekt stworzony za pomocą [Create React App](https://github.com/facebook/create-react-app).
-Dane zapisywane są w store reduxa. Po odświeżeniu strony zostają usunięte.
 
-**Dodatkowo użyto:**
+## Additional info
+Project created with  [Create React App](https://github.com/facebook/create-react-app).
+The data is stored in store redux. After refreshing the page, will be deleted.
+
+**Additionally used:**
 ```
-1. axios - do pobrania danych z api
-2. redux - do zapisania danych w store
+1. axios - to get data from api
+2. redux - for saving data in the store
 ```
 
 
