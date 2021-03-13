@@ -46,17 +46,20 @@
     padding: 4px 26px;
     margin: 0 30px 0 auto;
     outline: none;
+    transition: .3s filter;
+    cursor: pointer;
 }
 .error {
-    width: 100%;
+    width: 98%;
     text-align: center;
     background: #e76f51;
     margin: 10px 0;
     padding: 3px;
+    animation: fadeIn .3s ease-in-out;
 }
 
 .tableSelect {
-    margin: 30px 0 0;
+    margin: 60px 0 0;
     border-bottom: 1px solid var(--charcoal);
     position: relative;
 }
@@ -67,7 +70,7 @@
     padding: 1px 6px;
 }
 .tableSelect .tableSelectActive {
-    color: var(--charcoal);
+    color: #d7fffb;
     background: var(--persian-green);
     border-top-left-radius: 6px;
     border-top-right-radius: 8px;
@@ -81,6 +84,7 @@
     border-color: #00000036;
 }
 .table thead {
+    color: #d7fffb;
     background: #2a9d90;
     border-color: #2a9d90;
 }
@@ -89,6 +93,7 @@
 }
 .table th,
 .table td {
+    text-align: center;
     padding: 4px;
 }
 .table button {
@@ -100,6 +105,7 @@
     padding: 2px 4px;
     width: 100%;
     cursor: pointer;
+    transition: .3s filter;
 }
 .table .added {
     pointer-events: none;
@@ -108,11 +114,106 @@
     box-shadow: 0 0 4px 1px gray;
 }
 .table .burntBtn {
-    background: var(--burnt-sienna);
-    box-shadow: 0 0 4px 1px var(--burnt-sienna);
+    max-width: 100px;
+    background: var(--sandy-brown);
+    box-shadow: 0 0 4px 1px var(--sandy-brown);
+    transition: .3s filter;
+}
+.table .burntBtn:hover,
+.table button:hover,
+.loginForm button:hover {
+    filter: brightness(1.2);
+}
+.loginForm {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tableSelect,
+.table {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .loading {
     text-align: center;
 }
 
+@keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@media screen and (min-width: 360px) {
+    .tableSelect {
+        margin-top: 80px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .loginForm {
+        font-size: 1.4em;
+    }
+    .loginForm label p {
+        width: 100px;
+    }
+    .loginForm label input {
+        font-size: 0.8em;
+        width: 200px;
+        padding: 0 4px;
+    }
+    .loginForm button {
+        font-size: 0.86em;
+        padding: 6px 34px;
+        margin: 10px 60px 10px auto;
+    }
+    .tableSelect a {
+        padding: 1px 10px;
+    }
+    .tableSelect,
+    .table {
+        font-size: 1.4em;
+    }
+    .table th,
+    .table td {
+        padding: 6px 0;
+    }
+}
+@media screen and (min-width: 1366px) {
+    .tableSelect,
+    .table {
+        font-size: 1.68em;
+    }
+    .table .burntBtn {
+        max-width: 140px;
+    }
+    .tableSelect {
+        margin-top: 140px;
+    }
+    .tableSelect a {
+        padding: 1px 16px;
+    }
+    .table th,
+    .table td {
+        padding: 8px 0;
+    }
+    .loginForm {
+        font-size: 1.68em;
+    }
+    .loginForm label p {
+        width: 160px;
+        font-size: 1.16em;
+    }
+    .loginForm label input {
+        width: 300px;
+        font-size: 0.9em;
+    }
+    .loginForm button {
+        font-size: 1em;
+        padding: 8px 42px;
+        margin: 10px 100px 10px auto;
+    }
+}
+@media screen and (min-width: 1920px) {
+
+}

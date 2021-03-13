@@ -29,4 +29,41 @@
     color: white;
     font-size: 0.7em;
     padding: 2px 12px;
+    cursor: pointer;
+    transition: filter .3s;
+}
+.logoutForm button:hover {
+    filter: brightness(1.2);
+}
+
+
+@media screen and (min-width: 768px) {
+    .nav h1 {
+        font-size: 2.4em;
+    }
+    .nav p {
+        font-size: 1.2em;
+    }
+    .logoutForm button {
+        font-size: 0.86em;
+    }
+    
+}
+@media screen and (min-width: 1366px) {
+    .nav {
+        height: 100px;
+    }
+    .nav h1 {
+        font-size: 3em;
+    }
+    .nav p {
+        font-size: 1.6em;
+    }
+    .logoutForm button {
+        font-size: 1.2em;
+    }
+
+}
+@media screen and (min-width: 1920px) {
+
 }

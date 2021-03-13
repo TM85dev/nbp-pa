@@ -20,12 +20,20 @@
 .notLoginModal p {
     color: lightgray;
 }
-.notLoginModal button {
+.notLoginModal button,
+.removeModal button {
     border: 0;
     background: #f4a261;
     border-radius: 2px;
     padding: 4px 26px;
     outline: none;
+    box-shadow: 0 0 4px 1px var(--sandy-brown);
+    cursor: pointer;
+    transition: filter .2s;
+}
+.notLoginModal button:hover,
+.removeModal button:hover {
+    filter: brightness(1.2);
 }
 .removeModal {
     position: fixed;
@@ -49,6 +57,7 @@
     padding: 16px;
     min-width: 200px;
     min-height: 70px;
+    animation: fadeIn .3s ease-in-out;
 }
 .removeModal p {
     color: lightgray;
@@ -60,4 +69,33 @@
 }
 .removeModal button {
     margin: 0 16px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@media screen and (min-width: 768px) {
+    .notLoginModal p,
+    .removeModal p {
+        font-size: 1.4rem;
+    }
+    .notLoginModal button,
+    .removeModal .buttons button {
+        font-size: 1.1rem;
+    }
+}
+@media screen and (min-width: 1366px) {
+    .notLoginModal p,
+    .removeModal p {
+        font-size: 1.6rem;
+    }
+    .notLoginModal button,
+    .removeModal .buttons button {
+        font-size: 1.3rem;
+    }
+}
+@media screen and (min-width: 1920px) {
+
 }
